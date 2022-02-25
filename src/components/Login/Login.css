@@ -1,0 +1,29 @@
+.max-w-md {
+  max-width: 28rem;
+}
+
+.bgcolor {
+  background-color: #ebf4ff;
+}
+
+input:focus,
+input:active {
+  outline: none !important;
+  box-shadow: 0 0 1px 1px #2b72c9;
+  opacity: 0.8;
+}
+
+#google {
+  height: 28px;
+  width: 28px;
+}
+
+.sign-google {
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.dom {
+  position: absolute;
+  top: 9rem;
+}

@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { Profiler, useState } from "react";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./components/Login/Login";
+import SignUp from "./components/SignUp/SignUp";
 
 function App() {
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+  const [modu, setModu] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <>
+        <Router>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={<Login isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
+              exact
+              path="/signup"
+              element={<SignUp isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+          </Routes>
+        </Router>
+      </>
+    </>
   );
 }
 
