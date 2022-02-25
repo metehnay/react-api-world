@@ -4,6 +4,8 @@ import React, { Profiler, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
+import Home from "./components/Home/Home";
+import ChuckNorris from "./components/ListAPI/ChuckNorris/ChuckNorris";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -16,12 +18,19 @@ function App() {
             <Route
               exact
               path="/"
+              element={<Home isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
+              path="/login"
               element={<Login isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
             <Route
-              exact
               path="/signup"
               element={<SignUp isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
+              path="/chucknorris"
+              element={<ChuckNorris isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
           </Routes>
         </Router>

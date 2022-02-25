@@ -1,0 +1,13 @@
+.norris {
+  grid-row-start: main;
+  grid-column-start: main;
+  grid-row-end: main;
+  grid-column-end: main;
+  display: flex;
+  justify-content: center;
+}
+
+.former {
+  align-items: center;
+  text-align: center;
+}

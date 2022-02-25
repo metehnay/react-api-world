@@ -74,7 +74,7 @@ const SignUp = () => {
             </button>
             <p className="d-flex mt-2 p-1 justify-content-end">
               Already have an account?{" "}
-              <Link to="/" className="mx-2">
+              <Link to="/login" className="mx-2">
                 {" "}
                 Log in now.
               </Link>{" "}
