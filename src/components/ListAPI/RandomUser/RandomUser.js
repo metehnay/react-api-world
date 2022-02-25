@@ -16,6 +16,12 @@ const ChuckNorris = ({ isAuth, setIsAuth }) => {
   return (
     <>
       <div className="containers">
+        <p className="p-2 mt-2 btn btn-primary d-flex justify-content-center api">
+          <a href="https://randomuser.me/" target="_blank">
+            {" "}
+            CLICK TO VISIT API SOURCE
+          </a>
+        </p>
         <div className="sidebar">
           <Sidebar isAuth={isAuth} setIsAuth={setIsAuth} />
           <div className="norris mt-4">

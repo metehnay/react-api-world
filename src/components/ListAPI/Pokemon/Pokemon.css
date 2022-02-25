@@ -1,0 +1,54 @@
+.poke-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.poke-item {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 220px;
+  height: 220px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 14px;
+}
+
+.poke-item > img {
+  width: 170px;
+  height: 150px;
+  border-radius: 14px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.poke-item > img:hover {
+  transform: scale3d(2.3, 2.3, 2.3);
+  transition: 0.5s ease;
+  filter: drop-shadow(0 -6mm 4mm #f3ca20);
+}
+
+.pok {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgb(30, 98, 177);
+  width: 100%;
+  color: #fff;
+  padding: 10px 35px;
+  border-radius: 4px;
+}
+
+.api a {
+  color: #fff;
+  margin-left: 10px;
+}
+
+.api a:hover {
+  color: #fff;
+}

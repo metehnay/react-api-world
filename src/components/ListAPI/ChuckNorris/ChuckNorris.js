@@ -16,11 +16,13 @@ const ChuckNorris = ({ isAuth, setIsAuth }) => {
   return (
     <>
       <div className="containers">
+        <p className="p-2 mt-2 btn btn-primary d-flex justify-content-center api">
+          <a href="https://api.chucknorris.io/" target="_blank">
+            {" "}
+            CLICK TO VISIT API SOURCE
+          </a>
+        </p>
         <div className="sidebar">
-          <p className="p-2 mt-2 btn btn-primary">
-            Source: https://api.chucknorris.io/
-          </p>
-
           <Sidebar isAuth={isAuth} setIsAuth={setIsAuth} />
           <div className="norris mt-4">
             <div className="former">

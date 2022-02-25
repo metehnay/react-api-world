@@ -74,4 +74,5 @@
   background-color: #479fd7;
   transition: 0.5s all;
   transform: scale3d(1.1, 1.1, 1.1);
+  opacity: 0.8;
 }

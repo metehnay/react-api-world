@@ -27,6 +27,7 @@ const Home = ({ isAuth, setIsAuth }) => {
               <Link to="/createpost">+ Add API</Link>
             </button>
           </div>
+
           <div className="new-container">
             {postLists.map((post) => {
               return (

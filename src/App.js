@@ -8,6 +8,9 @@ import Home from "./components/Home/Home";
 import ChuckNorris from "./components/ListAPI/ChuckNorris/ChuckNorris";
 import CreatePost from "./components/CreatePost/CreatePost";
 import RandomUser from "./components/ListAPI/RandomUser/RandomUser";
+import Pokemon from "./components/ListAPI/Pokemon/Pokemon";
+import Valorant from "./components/ListAPI/Valorant/Valorant";
+import Recipes from "./components/ListAPI/Recipes/Recipes";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -39,8 +42,20 @@ function App() {
               element={<ChuckNorris isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
             <Route
+              path="/pokemon"
+              element={<Pokemon isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
               path="/randomuser"
               element={<RandomUser isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
+              path="/valorant"
+              element={<Valorant isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
+              path="/recipes"
+              element={<Recipes isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
           </Routes>
         </Router>

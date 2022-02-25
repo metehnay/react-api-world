@@ -71,8 +71,18 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
               </Link>
             </li>
             <li>
-              <Link to="/chucknorris" className="kat">
-                Rapid Maps
+              <Link to="/pokemon" className="kat">
+                Pokemon API
+              </Link>
+            </li>
+            <li>
+              <Link to="/valorant" className="kat">
+                Valorant API
+              </Link>
+            </li>
+            <li>
+              <Link to="/recipes" className="kat">
+                Recipes API
               </Link>
             </li>
             {!isAuth && <img src={lock} id="lock" />}
