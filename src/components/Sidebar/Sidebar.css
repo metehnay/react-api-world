@@ -98,3 +98,30 @@
   filter: blur(1px) !important;
   height: 45px;
 }
+
+.homepage {
+  position: absolute;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.exe {
+  height: 137px;
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+}
+
+.homepage img {
+  max-width: 100%;
+  display: block;
+}
+
+.explore {
+  width: 100%;
+  padding: 24px;
+}
+
+.explore a {
+  color: #fff;
+}

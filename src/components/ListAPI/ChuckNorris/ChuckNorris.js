@@ -17,6 +17,10 @@ const ChuckNorris = ({ isAuth, setIsAuth }) => {
     <>
       <div className="containers">
         <div className="sidebar">
+          <p className="p-2 mt-2 btn btn-primary">
+            Source: https://api.chucknorris.io/
+          </p>
+
           <Sidebar isAuth={isAuth} setIsAuth={setIsAuth} />
           <div className="norris mt-4">
             <div className="former">

@@ -1,0 +1,24 @@
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  width: 64px;
+  height: 104px;
+  margin: 48px;
+  margin-bottom: 98px;
+}
+
+.grid-item > img {
+  width: 140px;
+  box-shadow: 0 0 10px 5px rgb(136, 122, 122);
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.grid-item > img:hover {
+  transform: scale3d(2.3, 2.3, 2.3);
+  transition: 0.5s ease;
+  filter: drop-shadow(0 -6mm 4mm #f3ca20);
+}

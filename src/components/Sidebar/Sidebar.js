@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Sidebar.css";
 import { signOut } from "firebase/auth";
 import lock from "./lock.svg";
+import background from "./background.png";
 
 import { auth, useAuth, upload } from "../../firebase";
 import ChuckNorris from "../ListAPI/ChuckNorris/ChuckNorris";
@@ -44,6 +45,14 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
             </>
           )}
         </div>
+        <div className="exe mt-4">
+          <img src={background} className="homepage" />
+          <div className="explore">
+            <h2>
+              <Link to="/">HOMEPAGE</Link>
+            </h2>
+          </div>
+        </div>
         {isAuth ? (
           <h3 className="m-4">API LIST</h3>
         ) : (
@@ -53,12 +62,12 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
           <div className="categories m-2 p-4">
             <li>
               <Link to="/chucknorris" className="kat">
-                Chuck Norris
+                Chuck Norris API
               </Link>
             </li>
             <li>
-              <Link to="/chucknorris" className="kat">
-                Dad Jokes
+              <Link to="/randomuser" className="kat">
+                Random User API
               </Link>
             </li>
             <li>
