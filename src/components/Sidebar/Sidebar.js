@@ -45,6 +45,11 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
             </>
           )}
         </div>
+        {isAuth && (
+          <Link to="/favorites" className="favorites">
+            Favorites
+          </Link>
+        )}
         <div className="exe mt-4">
           <img src={background} className="homepage" />
           <div className="explore">

@@ -76,3 +76,42 @@
   transform: scale3d(1.1, 1.1, 1.1);
   opacity: 0.8;
 }
+
+.uploader img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+.uploader {
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+}
+
+.uploader p {
+  margin: 6px;
+  margin-left: 10px;
+}
+
+#favori {
+  border: none;
+  background-color: #373f68;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #fff;
+  padding: 5px 15px;
+}
+
+.butons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.another img {
+  max-width: 100%;
+}
+
+.another {
+  display: flex;
+  flex-wrap: wrap;
+}

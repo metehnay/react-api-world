@@ -22,7 +22,7 @@ const SignUp = () => {
     const authentication = getAuth();
 
     createUserWithEmailAndPassword(authentication, email, password).then(
-      navigate("/")
+      navigate("/login")
     );
   };
 

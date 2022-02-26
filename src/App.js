@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Profiler, useState } from "react";
+import React, { Profiler, useState, useEffect } from "react";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Login/Login";
@@ -11,13 +11,54 @@ import RandomUser from "./components/ListAPI/RandomUser/RandomUser";
 import Pokemon from "./components/ListAPI/Pokemon/Pokemon";
 import Valorant from "./components/ListAPI/Valorant/Valorant";
 import Recipes from "./components/ListAPI/Recipes/Recipes";
+import { MainContext } from "./components/Context";
+import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
+import { db, auth } from "./firebase";
+import Favorites from "./components/Favorites/Favorites";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
   const [modu, setModu] = useState(false);
+  const [postLists, setPostList] = useState([]);
+  const [favorites, setFavorites] = useState(localStorage.getItem("dam"));
+
+  const postsCollectionRef = collection(db, "posts");
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const data = await getDocs(postsCollectionRef);
+      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      const localData = localStorage.getItem("dam") ?? [];
+      setFavorites(localData);
+    };
+
+    getPosts();
+  }, []);
+
+  const addFavorite = (favorite) => {
+    localStorage.setItem("dam", JSON.stringify(favorites));
+
+    const newFavouriteList = [...favorites, favorite];
+    setFavorites(newFavouriteList);
+    saveToLocalStorage(newFavouriteList);
+
+    alert("API ADDED");
+  };
+
+  const saveToLocalStorage = (favorites) => {
+    localStorage.setItem("dam", JSON.stringify(favorites));
+  };
+
+  const data = {
+    postLists,
+    setPostList,
+    favorites,
+    setFavorites,
+    addFavorite,
+  };
   return (
     <>
-      <>
+      <MainContext.Provider value={data}>
         <Router>
           <Routes>
             <Route
@@ -57,9 +98,13 @@ function App() {
               path="/recipes"
               element={<Recipes isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
+            <Route
+              path="/favorites"
+              element={<Favorites isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
           </Routes>
         </Router>
-      </>
+      </MainContext.Provider>
     </>
   );
 }

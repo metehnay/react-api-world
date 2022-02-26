@@ -13,6 +13,7 @@ const ChuckNorris = ({ isAuth, setIsAuth }) => {
 
     getAPI();
   }, []);
+
   return (
     <>
       <div className="containers">

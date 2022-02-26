@@ -9,6 +9,8 @@ import {
   signOut,
 } from "firebase/auth";
 import "./Login.css";
+import Swal from "sweetalert2";
+
 import logo from "../../logo.png";
 
 const Login = ({ isAuth, setIsAuth }) => {

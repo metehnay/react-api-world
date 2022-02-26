@@ -125,3 +125,12 @@
 .explore a {
   color: #fff;
 }
+
+.favorites {
+  display: flex;
+  margin: 20px 0px;
+  padding: 10px;
+  background-color: rgb(70, 97, 230);
+  color: #fff;
+  border-radius: 4px;
+}

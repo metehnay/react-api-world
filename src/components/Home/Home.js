@@ -4,19 +4,13 @@ import { db, auth } from "../../firebase";
 import { Link } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import "./Home.css";
+import PostList from "./PostList";
+import { MainContext, useContext } from "../Context";
 
 const Home = ({ isAuth, setIsAuth }) => {
-  const [postLists, setPostList] = useState([]);
-  const postsCollectionRef = collection(db, "posts");
+  const { postLists, setPostList, favorites, setFavorites, addFavorite } =
+    useContext(MainContext);
 
-  useEffect(() => {
-    const getPosts = async () => {
-      const data = await getDocs(postsCollectionRef);
-      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-
-    getPosts();
-  }, []);
   return (
     <div className="containers">
       <div className="sidebar">
@@ -29,22 +23,15 @@ const Home = ({ isAuth, setIsAuth }) => {
           </div>
 
           <div className="new-container">
-            {postLists.map((post) => {
+            {postLists?.map((post) => {
               return (
-                <div className="post">
-                  <div className="postimage">
-                    <div className="del">
-                      <p id="name">{post.name}</p>
-                    </div>
-                    <div className="images">
-                      <a href={post.linkin}>
-                        <p className="ss">{post.title}</p>
-
-                        <img src={post.imageURL} id="img-photo" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <>
+                  <PostList
+                    post={post}
+                    addFavorite={addFavorite}
+                    key={post.id}
+                  />
+                </>
               );
             })}
           </div>
