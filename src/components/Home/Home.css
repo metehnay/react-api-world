@@ -73,8 +73,13 @@
 .images:hover {
   background-color: #479fd7;
   transition: 0.5s all;
-  transform: scale3d(1.1, 1.1, 1.1);
-  opacity: 0.8;
+}
+
+#favori:hover {
+  transform: scale3d(1.2, 1.2, 1.2);
+  background-color: #ffffff;
+  color: #000;
+  transition: 0.5s all;
 }
 
 .uploader img {

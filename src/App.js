@@ -15,12 +15,18 @@ import { MainContext } from "./components/Context";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db, auth } from "./firebase";
 import Favorites from "./components/Favorites/Favorites";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
   const [modu, setModu] = useState(false);
   const [postLists, setPostList] = useState([]);
   const [favorites, setFavorites] = useState(localStorage.getItem("dam"));
+
+  const MySwal = withReactContent(Swal);
 
   const postsCollectionRef = collection(db, "posts");
 
@@ -42,11 +48,62 @@ function App() {
     setFavorites([...favorites, favorite]);
 
     localStorage.setItem("dam", JSON.stringify([...favorites, favorite]));
+
+    toast(`API added to your favorite list`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      theme: "light",
+      pauseOnHover: true,
+      draggable: false,
+    });
   };
 
   const removeFavourites = () => {
-    localStorage.removeItem("dam");
-    window.location.reload();
+    const greet = () => {
+      localStorage.removeItem("dam");
+
+      window.location.reload();
+    };
+    MySwal.fire({
+      title: "REMOVING FAVORITES",
+      icon: "warning",
+      text: `Are you sure? you wan't to delete all your API favorites.`,
+      showCancelButton: true,
+      confirmButtonText: "Delete",
+      customClass: {
+        confirmButton: "btn btn-primary m-2 p-2",
+        cancelButton: "btn btn-success m-2 p-2",
+      },
+      showClass: {
+        backdrop: "swal2-noanimation", // disable backdrop animation
+        popup: "", // disable popup animation
+        icon: "", // disable icon animation
+      },
+      hideClass: {
+        backdrop: "swal2-noanimation", // disable backdrop animation
+        popup: "", // disable popup animation
+        icon: "", // disable icon animation
+      },
+      buttonsStyling: false,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        toast(`Favorite API's deleting. Please wait...`, {
+          position: "top-right",
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          theme: "light",
+          pauseOnHover: true,
+          draggable: false,
+        });
+
+        setTimeout(greet, 3000);
+      } else {
+        alert("cool");
+      }
+    });
   };
 
   const data = {
@@ -60,6 +117,7 @@ function App() {
   return (
     <>
       <MainContext.Provider value={data}>
+        <ToastContainer />
         <Router>
           <Routes>
             <Route
