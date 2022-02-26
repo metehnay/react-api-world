@@ -8,10 +8,6 @@ const Favorites = ({ isAuth, setIsAuth, addFavorite }) => {
   const { postLists, setPostList, favorites, setFavorites } =
     useContext(MainContext);
 
-  useEffect(() => {
-    const localData = localStorage.getItem("dam") ?? [];
-    setFavorites(localData);
-  }, [setFavorites]);
   return (
     <>
       {" "}

@@ -28,25 +28,20 @@ function App() {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      const localData = localStorage.getItem("dam") ?? [];
-      setFavorites(localData);
     };
 
     getPosts();
   }, []);
 
+  useEffect(() => {
+    const localData = localStorage.getItem("dam") ?? [];
+    setFavorites(localData);
+  }, [setFavorites]);
+
   const addFavorite = (favorite) => {
-    localStorage.setItem("dam", JSON.stringify(favorites));
+    setFavorites([...favorites, favorite]);
 
-    const newFavouriteList = [...favorites, favorite];
-    setFavorites(newFavouriteList);
-    saveToLocalStorage(newFavouriteList);
-
-    alert("API ADDED");
-  };
-
-  const saveToLocalStorage = (favorites) => {
-    localStorage.setItem("dam", JSON.stringify(favorites));
+    localStorage.setItem("dam", JSON.stringify([...favorites, favorite]));
   };
 
   const data = {
