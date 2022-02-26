@@ -1,6 +1,6 @@
 import React from "react";
 
-const PostList = ({ post, addFavorite }) => {
+const PostList = ({ post, addFavorite, removeFavourites }) => {
   const { linkin, title, imageURL, photoURL, name, id } = post;
 
   return (

@@ -34,7 +34,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const localData = localStorage.getItem("dam") ?? [];
+    const localData = JSON.parse(localStorage.getItem("dam")) ?? [];
     setFavorites(localData);
   }, [setFavorites]);
 
@@ -44,9 +44,15 @@ function App() {
     localStorage.setItem("dam", JSON.stringify([...favorites, favorite]));
   };
 
+  const removeFavourites = () => {
+    localStorage.removeItem("dam");
+    window.location.reload();
+  };
+
   const data = {
     postLists,
     setPostList,
+    removeFavourites,
     favorites,
     setFavorites,
     addFavorite,

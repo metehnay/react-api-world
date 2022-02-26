@@ -8,8 +8,14 @@ import PostList from "./PostList";
 import { MainContext, useContext } from "../Context";
 
 const Home = ({ isAuth, setIsAuth }) => {
-  const { postLists, setPostList, favorites, setFavorites, addFavorite } =
-    useContext(MainContext);
+  const {
+    postLists,
+    setPostList,
+    favorites,
+    setFavorites,
+    addFavorite,
+    removeFavourites,
+  } = useContext(MainContext);
 
   return (
     <div className="containers">
@@ -30,6 +36,7 @@ const Home = ({ isAuth, setIsAuth }) => {
                     post={post}
                     addFavorite={addFavorite}
                     key={post.id}
+                    removeFavourites={removeFavourites}
                   />
                 </>
               );
