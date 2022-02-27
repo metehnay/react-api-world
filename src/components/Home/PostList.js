@@ -1,9 +1,14 @@
 import React from "react";
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
-const PostList = ({ post, addFavorite, removeFavourites }) => {
+const PostList = ({ post, addFavorite, removeFavourites, isAuth }) => {
   const { linkin, title, imageURL, photoURL, name, id } = post;
 
+  const log = useNavigate();
+  const loginNav = () => {
+    log("/login");
+  };
   return (
     <>
       <div>
@@ -26,11 +31,18 @@ const PostList = ({ post, addFavorite, removeFavourites }) => {
               </div>
               <div className="flexo">
                 <div className="demo">
-                  <button className="demos">View Demo</button>
+                  <a href={linkin}>
+                    <button className="demos">View Demo</button>
+                  </a>
                 </div>
                 {addFavorite && (
                   <div className="butons">
-                    <button onClick={() => addFavorite(id)} id="favori">
+                    <button
+                      onClick={
+                        isAuth ? () => addFavorite(id) : () => loginNav(id)
+                      }
+                      id="favori"
+                    >
                       +
                     </button>
                   </div>

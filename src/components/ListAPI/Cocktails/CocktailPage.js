@@ -86,11 +86,7 @@ export default function CocktailPage({ isAuth, setIsAuth }) {
                 <p>
                   <span className="drink-data">category:</span> {category}
                 </p>
-                {/* 
-            <p>
-              <span className='drink-data'>info:</span> {info}
-            </p>
-            */}
+
                 <p>
                   <span className="drink-data">serving glass:</span> {glass}
                 </p>

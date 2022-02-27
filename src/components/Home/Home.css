@@ -160,7 +160,8 @@
 .flexo {
   display: flex;
   margin: 5px;
-  margin-left: 7px;
+  justify-content: center;
+  width: 100%;
 }
 
 .demos:hover {
