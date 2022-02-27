@@ -1,4 +1,5 @@
 import React from "react";
+import "./Home.css";
 
 const PostList = ({ post, addFavorite, removeFavourites }) => {
   const { linkin, title, imageURL, photoURL, name, id } = post;
@@ -12,15 +13,18 @@ const PostList = ({ post, addFavorite, removeFavourites }) => {
 
             <div className="images">
               <a href={linkin}>
-                <p className="ss">{title}</p>
+                <p className="ss">
+                  {title} <i className="status"></i>
+                </p>
 
                 <img src={imageURL} id="img-photo" />
               </a>
               <div className="uploader">
                 <img src={photoURL} />
 
-                <p>by {name}</p>
+                <p>by {name} </p>
               </div>
+
               {addFavorite && (
                 <div className="butons">
                   <button onClick={() => addFavorite(id)} id="favori">

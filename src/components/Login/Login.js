@@ -3,6 +3,8 @@ import google from "./google-icon.svg";
 import { auth, provider } from "../../firebase";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate, Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -27,9 +29,22 @@ const Login = ({ isAuth, setIsAuth }) => {
         loginPassword
       );
       localStorage.setItem("isAuth", true);
-
       setIsAuth(true);
-      navigate("/");
+
+      const grat = () => {
+        navigate("/");
+      };
+      setTimeout(grat, 1500);
+
+      toast(`Successfully logged in! Loading...`, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        theme: "light",
+        pauseOnHover: true,
+        draggable: false,
+      });
     } catch (error) {
       console.log(error.message);
     }
@@ -39,8 +54,21 @@ const Login = ({ isAuth, setIsAuth }) => {
     signInWithPopup(auth, provider).then((result) => {
       localStorage.setItem("isAuth", true);
 
+      toast(`Successfully logged in! Loading...`, {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        theme: "light",
+        pauseOnHover: true,
+        draggable: false,
+      });
       setIsAuth(true);
-      navigate("/");
+
+      const grat = () => {
+        navigate("/");
+      };
+      setTimeout(grat, 1500);
     });
   };
 

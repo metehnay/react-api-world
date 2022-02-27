@@ -12,8 +12,11 @@ const Favorites = ({ isAuth, setIsAuth, addFavorite }) => {
     <>
       {" "}
       <div className="containers">
-        <p className="p-2 mt-2 btn btn-primary d-flex justify-content-center api">
-          <button onClick={removeFavourites} className="btn btn-primary">
+        <p className=" mt-2 btn btn-primary d-flex justify-content-center api">
+          <button
+            onClick={removeFavourites}
+            className="btn btn-primary border-0 fixo w-100"
+          >
             REMOVE FAVORITES
           </button>
         </p>
