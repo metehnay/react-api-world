@@ -19,6 +19,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import CocktailSearch from "./components/ListAPI/Cocktails/CocktailSearch";
+import CocktailPage from "./components/ListAPI/Cocktails/CocktailPage";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -154,12 +156,21 @@ function App() {
               element={<Valorant isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
             <Route
+              path="/cocktail/:id"
+              element={<CocktailPage isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+
+            <Route
               path="/recipes"
               element={<Recipes isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
             <Route
               path="/favorites"
               element={<Favorites isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
+              path="/cocktails"
+              element={<CocktailSearch isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
           </Routes>
         </Router>

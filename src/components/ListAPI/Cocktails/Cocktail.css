@@ -1,0 +1,48 @@
+.cocktail-container img {
+  max-width: 220px;
+  max-height: 220px;
+  border-radius: 4px;
+}
+.form-control {
+  display: flex !important;
+  padding: 10px !important;
+  margin: 10px !important;
+  flex-direction: column !important;
+}
+
+.cocktail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px;
+  padding: 10px;
+}
+
+.cocktail {
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px 1px rgb(177, 175, 175);
+}
+
+.cocktail-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  grid-row-start: main;
+  grid-column-start: main;
+  grid-row-end: main;
+  grid-column-end: main;
+  box-shadow: 0 0 10px 5px #000;
+}
+
+.cocktail-section img {
+  max-width: 220px;
+  max-height: 220px;
+}
+.cocktailx-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

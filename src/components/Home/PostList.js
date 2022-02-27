@@ -24,14 +24,18 @@ const PostList = ({ post, addFavorite, removeFavourites }) => {
 
                 <p>by {name} </p>
               </div>
-
-              {addFavorite && (
-                <div className="butons">
-                  <button onClick={() => addFavorite(id)} id="favori">
-                    +
-                  </button>
+              <div className="flexo">
+                <div className="demo">
+                  <button className="demos">View Demo</button>
                 </div>
-              )}
+                {addFavorite && (
+                  <div className="butons">
+                    <button onClick={() => addFavorite(id)} id="favori">
+                      +
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

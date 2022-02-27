@@ -76,6 +76,11 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
               </Link>
             </li>
             <li>
+              <Link to="/cocktails" className="kat">
+                Cocktails API
+              </Link>
+            </li>
+            <li>
               <Link to="/pokemon" className="kat">
                 Pokemon API
               </Link>
