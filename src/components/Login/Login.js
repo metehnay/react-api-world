@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import google from "./google-icon.svg";
 import { auth, provider } from "../../firebase";
 import { signInWithPopup } from "firebase/auth";
@@ -50,7 +50,7 @@ const Login = ({ isAuth, setIsAuth }) => {
     }
   };
 
-  const signIn = () => {
+  const signIn = useCallback(() => {
     signInWithPopup(auth, provider).then((result) => {
       localStorage.setItem("isAuth", true);
 
@@ -70,7 +70,7 @@ const Login = ({ isAuth, setIsAuth }) => {
       };
       setTimeout(grat, 1500);
     });
-  };
+  }, [isAuth, setIsAuth, navigate]);
 
   return (
     <>

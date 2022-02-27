@@ -1,0 +1,10 @@
+.breed-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.breeds {
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px 1px rgb(182, 177, 177);
+}

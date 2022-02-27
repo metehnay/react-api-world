@@ -21,6 +21,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import CocktailSearch from "./components/ListAPI/Cocktails/CocktailSearch";
 import CocktailPage from "./components/ListAPI/Cocktails/CocktailPage";
+import CatFacts from "./components/ListAPI/CatFacts/CatFacts";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -171,6 +172,11 @@ function App() {
             <Route
               path="/cocktails"
               element={<CocktailSearch isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+
+            <Route
+              path="/catfacts"
+              element={<CatFacts isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
           </Routes>
         </Router>
