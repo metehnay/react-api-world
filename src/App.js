@@ -22,6 +22,7 @@ import withReactContent from "sweetalert2-react-content";
 import CocktailSearch from "./components/ListAPI/Cocktails/CocktailSearch";
 import CocktailPage from "./components/ListAPI/Cocktails/CocktailPage";
 import CatFacts from "./components/ListAPI/CatFacts/CatFacts";
+import GoogleBooks from "./components/ListAPI/BearPhotos/GoogleBooks";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -177,6 +178,10 @@ function App() {
             <Route
               path="/catfacts"
               element={<CatFacts isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
+              path="/googlebooks"
+              element={<GoogleBooks isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
           </Routes>
         </Router>

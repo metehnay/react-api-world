@@ -66,10 +66,11 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
         <div className={isAuth ? "category" : "blur"}>
           <div className="categories m-2 p-4">
             <li>
-              <Link to="/chucknorris" className="kat">
-                Chuck Norris API
+              <Link to="/googlebooks" className="kat">
+                Google Books API
               </Link>
             </li>
+
             <li>
               <Link to="/randomuser" className="kat">
                 Random User API
@@ -98,6 +99,11 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
             <li>
               <Link to="/recipes" className="kat">
                 Recipes API
+              </Link>
+            </li>
+            <li>
+              <Link to="/chucknorris" className="kat">
+                Chuck Norris API
               </Link>
             </li>
             {!isAuth && <img src={lock} id="lock" />}

@@ -27,7 +27,7 @@ const CatFacts = ({ isAuth, setIsAuth }) => {
     <>
       <div className="containers">
         <p className="p-2 mt-2 btn btn-primary d-flex justify-content-center api">
-          <a href="https://api.chucknorris.io/" target="_blank">
+          <a href="https://catfact.ninja/" target="_blank">
             {" "}
             CLICK TO VISIT API SOURCE
           </a>
