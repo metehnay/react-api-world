@@ -47,6 +47,9 @@
   border-radius: 14px;
 }
 
+.free {
+  color: rgb(228, 224, 224);
+}
 .avatar {
   height: 45px;
   width: 45px;
@@ -92,11 +95,11 @@
 
 #lock {
   position: relative;
-  bottom: 6rem;
+  bottom: 21rem;
   z-index: 9999;
-  left: 4rem;
+  left: 3rem;
   filter: blur(1px) !important;
-  height: 45px;
+  height: 85px;
 }
 
 .homepage {

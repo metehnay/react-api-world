@@ -16,6 +16,8 @@ const Home = ({ isAuth, setIsAuth }) => {
     favorites,
     setFavorites,
     addFavorite,
+    loads,
+    setLoads,
     removeFavourites,
   } = useContext(MainContext);
 

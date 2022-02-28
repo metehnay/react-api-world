@@ -58,6 +58,8 @@
 
 .images {
   padding: 10px;
+  transition: transform 0.7s ease-in-out;
+
   box-shadow: 0 0 10px 5px rgb(223, 223, 223);
 }
 
@@ -66,13 +68,43 @@
   padding: 5px;
   font-weight: 600;
   border-radius: 4px;
+  z-index: 99999999999;
   color: #fff;
   background-color: #373f68;
 }
 
-.images:hover {
-  background-color: #479fd7;
+.ms {
+  text-align: center;
+  display: block;
+  opacity: 0.8;
+  padding: 7px;
+  color: #fff;
   transition: 0.5s all;
+
+  z-index: 999;
+  background-color: #479fd7;
+}
+.images:hover {
+  filter: grayscale(100%);
+  transition: 0.5s all;
+  z-index: -9999;
+}
+
+.disable {
+  filter: grayscale(70%);
+}
+
+.ms:hover {
+  z-index: 999;
+  position: relative;
+  transition: 0.5s all;
+
+  filter: grayscale(0) !important;
+}
+
+.post:hover {
+  margin: 0px;
+  padding: 0px;
 }
 
 #favori:hover {
@@ -139,6 +171,17 @@
   display: inline-block;
 }
 
+.status1 {
+  margin-left: 1rem;
+  align-items: center;
+  height: 9px;
+  width: 9px;
+  background-color: rgb(218, 16, 16);
+  border-radius: 50%;
+  animation: none;
+  display: inline-block;
+}
+
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 1px rgba(25, 175, 85, 0.5),
@@ -157,6 +200,11 @@
   border-radius: 14px;
 }
 
+#svg {
+  width: 21px;
+  height: 21px;
+  margin-right: 8px;
+}
 .flexo {
   display: flex;
   margin: 5px;

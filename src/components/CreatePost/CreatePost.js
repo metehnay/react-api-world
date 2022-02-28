@@ -9,7 +9,6 @@ const CreatePost = ({ isAuth }) => {
   const [title, setTitle] = useState("");
   const [imageURL, setImageURL] = useState("");
   const [linkin, setLinkin] = useState("");
-  const [original, setOriginal] = useState(false);
 
   const postsCollectionRef = collection(db, "posts");
   let navigate = useNavigate();
@@ -19,7 +18,6 @@ const CreatePost = ({ isAuth }) => {
       title,
       imageURL,
       linkin,
-      original,
       name: auth.currentUser.displayName,
       id: auth.currentUser.uid,
 

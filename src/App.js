@@ -28,6 +28,7 @@ function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
   const [modu, setModu] = useState(false);
   const [postLists, setPostList] = useState([]);
+  const [loads, setLoads] = useState(true);
   const [favorites, setFavorites] = useState(localStorage.getItem("dam"));
 
   const MySwal = withReactContent(Swal);
@@ -116,6 +117,8 @@ function App() {
     removeFavourites,
     favorites,
     setFavorites,
+    loads,
+    setLoads,
     addFavorite,
   };
   return (

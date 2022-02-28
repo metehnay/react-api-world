@@ -6,6 +6,7 @@
 
 body {
   background-color: #f7f8fd !important;
+  transition: 0.5s all;
 }
 
 a {

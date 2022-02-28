@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../../Sidebar/Sidebar";
 import "./Recipes.css";
+import { MainContext, useContext } from "../../Context";
 
 const Recipes = ({ isAuth, setIsAuth }) => {
+  const { loads, setLoads } = useContext(MainContext);
   const [recipe, setRecipe] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {

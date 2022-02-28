@@ -54,8 +54,9 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
           <img src={background} className="homepage" />
           <div className="explore">
             <h2>
-              <Link to="/">HOMEPAGE</Link>
+              <Link to="/">API World</Link>
             </h2>
+            <p className="free">Free API Platform</p>
           </div>
         </div>
         {isAuth ? (
