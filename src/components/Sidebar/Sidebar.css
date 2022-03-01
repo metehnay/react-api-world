@@ -137,6 +137,18 @@
   opacity: 0.98;
 }
 
+#logged-user a,
+#logged-user {
+  color: #fff;
+  cursor: pointer;
+}
+
+#logged-user:hover,
+#logged-user a:hover {
+  color: rgb(100, 139, 247);
+  transition: 0.5s all;
+}
+
 .favorites {
   display: flex;
   margin: 20px 0px;

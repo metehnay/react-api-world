@@ -1,0 +1,103 @@
+@import "./shared.scss";
+.group1 {
+  padding: 0 0px 0 0;
+}
+.flexWrapperOne {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 156, 255, 1) 0%,
+    $transparent-orchid 100%
+  );
+  border-radius: 14px;
+  padding: 75px 93px 64px 16px;
+  position: relative;
+}
+.flexWrapperTwo {
+  background-color: $cornflower-blue;
+  border-radius: 14px;
+  padding: 22px 113px 21px 10px;
+  box-shadow: 0 4px 4px 0 $transparent-black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  backdrop-filter: blur(15px);
+}
+.ellipse1 {
+  height: 11.76%;
+  background-color: rgba(253, 255, 174, 1);
+  margin-bottom: 22px;
+  width: 450px !important;
+  border-radius: 50%;
+  align-self: stretch;
+}
+.ellipse2 {
+  height: 11.76%;
+  background-color: rgba(255, 63, 143, 1);
+  margin-bottom: 23px;
+  border-radius: 50%;
+  align-self: stretch;
+}
+.ellipse3 {
+  height: 11.76%;
+  background-color: rgba(15, 108, 249, 1);
+  margin-bottom: 27px;
+  border-radius: 50%;
+  align-self: stretch;
+}
+.ellipse4 {
+  height: 11.76%;
+  background-color: $lime-green;
+  border-radius: 50%;
+  align-self: stretch;
+}
+.favorites4 {
+  height: 7.86%;
+  width: 38.31%;
+  color: $white;
+  display: flex;
+  position: absolute;
+  left: 64px;
+  bottom: 76px;
+  @include roboto-16-regular;
+}
+.profile {
+  height: 7.86%;
+  width: 38.31%;
+  color: $white;
+  display: flex;
+  position: absolute;
+  left: 64px;
+  top: 134px;
+  @include roboto-16-regular;
+}
+.logOut {
+  height: 7.86%;
+  width: 38.31%;
+  color: $white;
+  display: flex;
+  position: absolute;
+  left: 63px;
+  bottom: 119px;
+  @include roboto-16-regular;
+}
+.homepage4 {
+  height: 7.86%;
+  width: 38.31%;
+  color: $white;
+  display: flex;
+  position: absolute;
+  left: 63px;
+  top: 98px;
+  @include roboto-16-regular;
+}
+.userPanel {
+  height: 28.93%;
+  width: 91.77%;
+  color: $ghost-white;
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 3px;
+  @include roboto-36-regular;
+}

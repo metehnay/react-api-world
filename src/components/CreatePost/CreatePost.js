@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../../firebase";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./CreatePost.css";
 import { Form, Button, Row, Col, Card, Container } from "react-bootstrap";
 
@@ -39,6 +39,10 @@ const CreatePost = ({ isAuth }) => {
     <>
       <Container fluid="p-5 d-flex justify-content-center mt-5 pt-5">
         <Form>
+          <Link to="/" className="btn btn-primary p-2 m-2">
+            Back to homepage
+          </Link>
+
           <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
             <Form.Label column sm={11}>
               API Title

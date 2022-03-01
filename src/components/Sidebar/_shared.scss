@@ -1,0 +1,23 @@
+// This is the project stylesheet
+
+// Colors
+$cornflower-blue: rgba(71, 159, 215, 1);
+$ghost-white: rgba(249, 249, 249, 1);
+$lime-green: rgba(49, 232, 33, 1);
+$transparent-black: rgba(0, 0, 0, 0.25);
+$transparent-orchid: rgba(200, 111, 196, 0.9);
+$white: rgba(255, 255, 255, 1);
+
+// Typographies
+@mixin roboto-16-regular {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+@mixin roboto-36-regular {
+  font-family: "Roboto";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: normal;
+}
