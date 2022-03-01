@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../../Sidebar/Sidebar";
 import "./Books.css";
 import axios from "axios";
+import Loading from "../../Loading";
 
 const GoogleBooks = ({ isAuth, setIsAuth }) => {
   const [books, setBooks] = useState("action");
   const [result, setResult] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const [apiKey, setApiKey] = useState(
     "AIzaSyDX4oONZtJz13VKRvufP7gyGkoOKmdb4io"
@@ -15,7 +17,7 @@ const GoogleBooks = ({ isAuth, setIsAuth }) => {
   const getBooks = () => {
     axios
       .get(BASE_URL)
-      .then((resp) => (console.log(resp), setResult(resp.data.items)))
+      .then((resp) => (setLoading(true), setResult(resp.data.items)))
       .catch((error) => setResult("ERRR"));
   };
 
@@ -48,20 +50,27 @@ const GoogleBooks = ({ isAuth, setIsAuth }) => {
                 </button>
               </div>
               <div className="books-container">
-                {result.map((books) => (
+                {loading ? (
                   <>
-                    <div className="book">
-                      <h4>{books.volumeInfo.title}</h4>
-                      <img src={books.volumeInfo.imageLinks.thumbnail} />
-                      <p>Publish Date: {books.volumeInfo.publishedDate}</p>
-                      <a href={books.volumeInfo.infoLink}>
-                        <button className="btn btn-primary" target="_blank">
-                          Book Info
-                        </button>
-                      </a>
-                    </div>
+                    {" "}
+                    {result.map((books) => (
+                      <>
+                        <div className="book">
+                          <h4>{books.volumeInfo.title}</h4>
+                          <img src={books.volumeInfo.imageLinks.thumbnail} />
+                          <p>Publish Date: {books.volumeInfo.publishedDate}</p>
+                          <a href={books.volumeInfo.infoLink}>
+                            <button className="btn btn-primary" target="_blank">
+                              Book Info
+                            </button>
+                          </a>
+                        </div>
+                      </>
+                    ))}
                   </>
-                ))}
+                ) : (
+                  <Loading />
+                )}
               </div>
             </div>
           </div>

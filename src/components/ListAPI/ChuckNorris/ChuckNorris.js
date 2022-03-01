@@ -3,6 +3,8 @@ import Sidebar from "../../Sidebar/Sidebar";
 import "./ChuckNorris.css";
 
 const ChuckNorris = ({ isAuth, setIsAuth }) => {
+  const [loading, setLoading] = useState(false);
+
   const [jokes, setJokes] = useState(
     "Chuck Norris favourite alcohol is Johnny Walker Texas Ranger"
   );

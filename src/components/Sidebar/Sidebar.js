@@ -53,9 +53,9 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
         <div className="exe mt-4">
           <img src={background} className="homepage" />
           <div className="explore">
-            <h2>
+            <h3>
               <Link to="/">API World</Link>
-            </h2>
+            </h3>
             <p className="free">Free API Platform</p>
           </div>
         </div>
@@ -71,7 +71,11 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
                 Google Books API
               </Link>
             </li>
-
+            <li>
+              <Link to="/crypto" className="kat">
+                Binance Crypto API
+              </Link>
+            </li>
             <li>
               <Link to="/randomuser" className="kat">
                 Random User API
@@ -100,6 +104,16 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
             <li>
               <Link to="/recipes" className="kat">
                 Recipes API
+              </Link>
+            </li>
+            <li>
+              <Link to="/imgflip" className="kat">
+                Meme Templates API
+              </Link>
+            </li>
+            <li>
+              <Link to="/football" className="kat">
+                Football API
               </Link>
             </li>
             <li>

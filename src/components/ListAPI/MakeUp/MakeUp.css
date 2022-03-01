@@ -1,0 +1,10 @@
+.makeup-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.makeup {
+  box-shadow: 0 0 10px 3px rgb(180, 173, 173);
+  margin: 10px;
+  padding: 10px;
+}

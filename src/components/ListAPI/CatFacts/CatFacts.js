@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import Loading from "../../Loading";
 import Sidebar from "../../Sidebar/Sidebar";
 import "./Cats.css";
 
 const CatFacts = ({ isAuth, setIsAuth }) => {
   const [catBreed, setCatBreed] = useState([]);
   const [catFact, setCatFact] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getCats = () => {
     fetch("https://catfact.ninja/facts?limit=1&max_length=140")
@@ -15,7 +17,7 @@ const CatFacts = ({ isAuth, setIsAuth }) => {
   const getBreed = () => {
     fetch("https://catfact.ninja/breeds?limit=1")
       .then((response) => response.json())
-      .then((lova) => (setCatBreed(lova.data), console.log(lova.data)));
+      .then((lova) => (setCatBreed(lova.data), setLoading(true)));
   };
 
   useEffect(() => {
@@ -36,14 +38,20 @@ const CatFacts = ({ isAuth, setIsAuth }) => {
           <Sidebar isAuth={isAuth} setIsAuth={setIsAuth} />
           <div className="norris mt-4">
             <div className="former">
-              {catFact.map((cats) => (
+              {loading ? (
                 <>
-                  <h1>{cats.fact}</h1>
-                  <button onClick={getCats} className="btn btn-primary">
-                    Generate Fact
-                  </button>
+                  {catFact.map((cats) => (
+                    <>
+                      <h1>{cats.fact}</h1>
+                      <button onClick={getCats} className="btn btn-primary">
+                        Generate Fact
+                      </button>
+                    </>
+                  ))}
                 </>
-              ))}
+              ) : (
+                <Loading />
+              )}
               <div className="breed-container">
                 {catBreed.map((breed) => (
                   <>

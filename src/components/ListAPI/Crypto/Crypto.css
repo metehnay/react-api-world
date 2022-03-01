@@ -1,0 +1,19 @@
+.crypto {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.coin {
+  margin: 5px;
+}
+
+.coin-inside {
+  display: flex;
+  margin: 10px;
+}
+
+.coin-inside p,
+.coin-inside h5 {
+  margin: 10px;
+}

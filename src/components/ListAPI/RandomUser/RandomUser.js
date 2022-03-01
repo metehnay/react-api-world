@@ -4,11 +4,12 @@ import "./RandomUser.css";
 
 const ChuckNorris = ({ isAuth, setIsAuth }) => {
   const [userList, setUserList] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const getAPI = () => {
       fetch("https://randomuser.me/api/?results=50")
         .then((resp) => resp.json())
-        .then((data) => setUserList(data.results));
+        .then((data) => (setLoading(true), setUserList(data.results)));
     };
 
     getAPI();
@@ -27,14 +28,30 @@ const ChuckNorris = ({ isAuth, setIsAuth }) => {
           <Sidebar isAuth={isAuth} setIsAuth={setIsAuth} />
           <div className="norris mt-4">
             <div className="grid-container">
-              {userList.map((users) => (
+              {loading ? (
                 <>
-                  <div className="grid-item">
-                    <h2>{users.name.first}</h2>
-                    <img src={users.picture.large} alt="github" />
+                  {userList.map((users) => (
+                    <>
+                      <div className="grid-item">
+                        <h2>{users.name.first}</h2>
+                        <img src={users.picture.large} alt="github" />
+                      </div>
+                    </>
+                  ))}
+                </>
+              ) : (
+                <>
+                  <div className="con d-flex justify-content-center align-items-center mt-5 pt-5">
+                    <div
+                      class="spinner-border text-primary d-flex mt-5"
+                      style={{ width: 244, height: 244 }}
+                      role="status"
+                    >
+                      <span class="sr-only"></span>
+                    </div>
                   </div>
                 </>
-              ))}
+              )}
             </div>
           </div>
         </div>

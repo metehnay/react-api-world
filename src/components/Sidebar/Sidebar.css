@@ -123,10 +123,18 @@
 .explore {
   width: 100%;
   padding: 24px;
+  position: relative;
+  top: 20px;
+  line-height: 0.8;
+}
+
+.explore p {
+  opacity: 0.85;
 }
 
 .explore a {
   color: #fff;
+  opacity: 0.98;
 }
 
 .favorites {

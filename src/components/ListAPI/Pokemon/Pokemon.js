@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
+import Loading from "../../Loading";
 import Sidebar from "../../Sidebar/Sidebar";
 import "./Pokemon.css";
 
 const Pokemon = ({ isAuth, setIsAuth }) => {
   const [pokemon, setPokemon] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getPoke = fetch("https://pokeapi.co/api/v2/pokemon?limit=50")
       .then((resp) => resp.json())
-      .then((data) => setPokemon(data.results));
+      .then((data) => (setLoading(true), setPokemon(data.results)));
   }, []);
   return (
     <>
@@ -23,16 +25,22 @@ const Pokemon = ({ isAuth, setIsAuth }) => {
           <Sidebar isAuth={isAuth} setIsAuth={setIsAuth} />
           <div className="norris">
             <div className="poke-grid">
-              {pokemon.map((poke) => (
+              {loading ? (
                 <>
-                  <div className="poke-item">
-                    <img
-                      src={`https://img.pokemondb.net/artwork/large/${poke.name}.jpg`}
-                    />
-                    <p className="pok">{poke.name}</p>
-                  </div>
+                  {pokemon.map((poke) => (
+                    <>
+                      <div className="poke-item">
+                        <img
+                          src={`https://img.pokemondb.net/artwork/large/${poke.name}.jpg`}
+                        />
+                        <p className="pok">{poke.name}</p>
+                      </div>
+                    </>
+                  ))}
                 </>
-              ))}
+              ) : (
+                <Loading />
+              )}
             </div>
           </div>
         </div>

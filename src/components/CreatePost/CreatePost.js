@@ -7,6 +7,7 @@ import { Form, Button, Row, Col, Card, Container } from "react-bootstrap";
 
 const CreatePost = ({ isAuth }) => {
   const [title, setTitle] = useState("");
+  const [ms, setMs] = useState("");
   const [imageURL, setImageURL] = useState("");
   const [linkin, setLinkin] = useState("");
 
@@ -17,6 +18,7 @@ const CreatePost = ({ isAuth }) => {
     await addDoc(postsCollectionRef, {
       title,
       imageURL,
+      ms,
       linkin,
       name: auth.currentUser.displayName,
       id: auth.currentUser.uid,
@@ -76,6 +78,18 @@ const CreatePost = ({ isAuth }) => {
             </Col>
           </Form.Group>
 
+          <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
+            <Form.Label column sm={11}>
+              Average MS
+            </Form.Label>
+            <Col sm={14}>
+              <Form.Control
+                type="number"
+                placeholder="Average MS..."
+                onChange={(e) => setMs(e.target.value)}
+              />
+            </Col>
+          </Form.Group>
           <Form.Group as={Row} className="mx-auto">
             <Col sm={{ span: 10, offset: 4 }}>
               <Button variant="primary" onClick={createPost}>

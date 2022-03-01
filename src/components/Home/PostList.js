@@ -23,33 +23,39 @@ const PostList = ({ post, addFavorite, removeFavourites, isAuth }) => {
         >
           <div className="postimage">
             <div className="del"></div>
-            <div className={onoff ? "images" : "images disable"}>
+            <div className={onoff ? "images disable" : "images"}>
               <a href={linkin}>
                 <p className="ss">
                   {title}{" "}
                   {onoff ? (
-                    <i className="status"></i>
-                  ) : (
                     <i className="status1"></i>
+                  ) : (
+                    <i className="status"></i>
                   )}
                 </p>
 
                 <img src={imageURL} id="img-photo" />
               </a>
               <div className="uploader">
-                <img src={photoURL} />
+                <img
+                  src={
+                    photoURL
+                      ? photoURL
+                      : "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+                  }
+                />
 
-                <p>by {name} </p>
+                <p>by {name ? `${name}` : "Anonymous"}</p>
               </div>
               <div className="flexo">
                 <div className="demo">
                   {onoff ? (
+                    <button className="demos opacity-25">View Demo</button>
+                  ) : (
                     <a href={linkin}>
                       {" "}
                       <button className="demos">View Demo</button>
                     </a>
-                  ) : (
-                    <button className="demos opacity-25">View Demo</button>
                   )}
                 </div>
                 {addFavorite && (

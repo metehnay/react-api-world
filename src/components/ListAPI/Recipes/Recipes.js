@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../../Sidebar/Sidebar";
 import "./Recipes.css";
 import { MainContext, useContext } from "../../Context";
+import Loading from "../../Loading";
 
 const Recipes = ({ isAuth, setIsAuth }) => {
   const { loads, setLoads } = useContext(MainContext);
   const [recipe, setRecipe] = useState([]);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const getRecipe = fetch(
       "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes",
@@ -29,6 +31,7 @@ const Recipes = ({ isAuth, setIsAuth }) => {
         console.error(err);
       });
   }, []);
+
   return (
     <>
       <div className="containers">
@@ -55,7 +58,7 @@ const Recipes = ({ isAuth, setIsAuth }) => {
                   ))}{" "}
                 </>
               ) : (
-                <h2>LOADING...</h2>
+                <Loading />
               )}
             </div>
           </div>

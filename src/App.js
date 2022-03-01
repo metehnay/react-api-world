@@ -22,7 +22,11 @@ import withReactContent from "sweetalert2-react-content";
 import CocktailSearch from "./components/ListAPI/Cocktails/CocktailSearch";
 import CocktailPage from "./components/ListAPI/Cocktails/CocktailPage";
 import CatFacts from "./components/ListAPI/CatFacts/CatFacts";
-import GoogleBooks from "./components/ListAPI/BearPhotos/GoogleBooks";
+import GoogleBooks from "./components/ListAPI/GoogleBooks/GoogleBooks";
+import ImgFlip from "./components/ListAPI/ImgFlip/ImgFlip";
+import Football from "./components/ListAPI/Football/Football";
+import Crypto from "./components/ListAPI/Crypto/Crypto";
+import MakeUp from "./components/ListAPI/MakeUp/MakeUp";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -164,7 +168,10 @@ function App() {
               path="/cocktail/:id"
               element={<CocktailPage isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
-
+            <Route
+              path="/imgflip"
+              element={<ImgFlip isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
             <Route
               path="/recipes"
               element={<Recipes isAuth={isAuth} setIsAuth={setIsAuth} />}
@@ -183,8 +190,20 @@ function App() {
               element={<CatFacts isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
             <Route
+              path="/football"
+              element={<Football isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
               path="/googlebooks"
               element={<GoogleBooks isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
+              path="/crypto"
+              element={<Crypto isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
+              path="/makeup"
+              element={<MakeUp isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
           </Routes>
         </Router>
