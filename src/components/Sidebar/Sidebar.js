@@ -7,8 +7,10 @@ import background from "./background.png";
 import styles from "./Group1.module.scss";
 import { auth, useAuth, upload } from "../../firebase";
 import styled from "styled-components";
-
 import ChuckNorris from "../ListAPI/ChuckNorris/ChuckNorris";
+import { Group3 } from "./Group3";
+import { Accordion } from "react-bootstrap";
+import AccordionMessage from "./AccordionMessage";
 
 const Sidebar = ({ isAuth, setIsAuth }) => {
   const currentUser = useAuth();
@@ -50,7 +52,6 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
             </>
           )}
         </div>
-
         {isAuth && (
           <UnsplashmfBBssMcRoot>
             <Image1
@@ -116,73 +117,22 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
         )}
 
         {isAuth ? (
-          <h3 className="m-4">API LIST</h3>
+          <>
+            <AccordionMessage />
+          </>
         ) : (
-          <p className="m-3">You must be signed in to see API list.</p>
+          <>
+            <div class="alert alert-primary mt-4" role="alert">
+              You must be signed in to see Free Premium API list.
+            </div>
+
+            <AccordionMessage />
+          </>
         )}
-        <div className={isAuth ? "category" : "blur"}>
-          <div className="categories m-2 p-4">
-            <li>
-              <Link to="/googlebooks" className="kat">
-                Google Books API
-              </Link>
-            </li>
-            <li>
-              <Link to="/crypto" className="kat">
-                Binance Crypto API
-              </Link>
-            </li>
-            <li>
-              <Link to="/randomuser" className="kat">
-                Random User API
-              </Link>
-            </li>
-            <li>
-              <Link to="/cocktails" className="kat">
-                Cocktails API
-              </Link>
-            </li>
-            <li>
-              <Link to="/pokemon" className="kat">
-                Pokemon API
-              </Link>
-            </li>
-            <li>
-              <Link to="/catfacts" className="kat">
-                Cat Facts API
-              </Link>
-            </li>
-            <li>
-              <Link to="/valorant" className="kat">
-                Valorant API
-              </Link>
-            </li>
-            <li>
-              <Link to="/makeup" className="kat">
-                Makeup API
-              </Link>
-            </li>
-            <li>
-              <Link to="/recipes" className="kat">
-                Recipes API
-              </Link>
-            </li>
-            <li>
-              <Link to="/imgflip" className="kat">
-                Meme Templates API
-              </Link>
-            </li>
-            <li>
-              <Link to="/football" className="kat">
-                Football API
-              </Link>
-            </li>
-            <li>
-              <Link to="/chucknorris" className="kat">
-                Chuck Norris API
-              </Link>
-            </li>
-            {!isAuth && <img src={lock} id="lock" />}
+        <div className="category">
+          {!isAuth && <img src={lock} id="lock" />}
+          <div className={isAuth ? "categories" : "blur"}>
+            <Group3 />
           </div>
         </div>
       </div>

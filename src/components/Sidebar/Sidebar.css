@@ -90,16 +90,19 @@
 }
 
 .blur {
-  filter: blur(3px);
+  filter: blur(3.5px);
 }
 
 #lock {
-  position: relative;
-  bottom: 21rem;
+  position: absolute;
+  bottom: 6rem;
+  filter: blur(1px);
+
+  opacity: 0.9;
+  right: 0;
   z-index: 9999;
-  left: 3rem;
-  filter: blur(1px) !important;
-  height: 85px;
+  left: 29rem;
+  height: 115px;
 }
 
 .homepage {
@@ -115,11 +118,26 @@
   align-items: flex-end;
 }
 
+.patos {
+  color: #479fd7;
+  font-weight: bold;
+}
+
+.pato {
+  font-size: 17px;
+  font-weight: 400;
+}
+
 .homepage img {
   max-width: 100%;
   display: block;
 }
 
+.infos {
+  font-weight: bold;
+  color: #479fd7;
+  background-color: rgb(213, 236, 255);
+}
 .explore {
   width: 100%;
   padding: 24px;
