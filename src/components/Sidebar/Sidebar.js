@@ -102,6 +102,11 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
               </Link>
             </li>
             <li>
+              <Link to="/makeup" className="kat">
+                Makeup API
+              </Link>
+            </li>
+            <li>
               <Link to="/recipes" className="kat">
                 Recipes API
               </Link>

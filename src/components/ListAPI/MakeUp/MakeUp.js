@@ -41,7 +41,8 @@ const MakeUp = ({ isAuth, setIsAuth }) => {
                         <div className="makeup">
                           <h5>{makeups.name}</h5>
                           <img src={makeups.image_link} />
-                          <p>{makeups.price} $</p>
+                          <h6>Brand: {makeups.brand}</h6>
+                          <p>${makeups.price}</p>
                         </div>
                       </>
                     ))}
