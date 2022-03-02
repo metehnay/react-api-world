@@ -131,7 +131,6 @@ const Sidebar = ({ isAuth, setIsAuth }) => {
           </>
         )}
         <div className="category">
-          {!isAuth && <img src={lock} id="lock" />}
           <div className={isAuth ? "categories" : "blur"}>
             <Group3 />
           </div>

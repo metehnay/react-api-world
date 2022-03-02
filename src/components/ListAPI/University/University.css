@@ -1,0 +1,10 @@
+.college-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.college {
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px 5px rgb(201, 201, 201);
+}

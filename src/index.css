@@ -134,3 +134,16 @@ code {
   top: 10px;
   right: 10px;
 }
+
+@media (max-width: 338px) {
+  .mobile-logo {
+    padding-right: 6rem !important;
+  }
+}
+
+@media (max-width: 293px) {
+  .mobile-logo {
+    width: 250px;
+    margin-top: 10px !important;
+  }
+}

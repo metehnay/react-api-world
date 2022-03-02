@@ -28,6 +28,7 @@ import Football from "./components/ListAPI/Football/Football";
 import Crypto from "./components/ListAPI/Crypto/Crypto";
 import MakeUp from "./components/ListAPI/MakeUp/MakeUp";
 import MobileNavigation from "./components/MobileNavigation";
+import University from "./components/ListAPI/University/University";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -182,6 +183,10 @@ function App() {
             <Route
               path="/favorites"
               element={<Favorites isAuth={isAuth} setIsAuth={setIsAuth} />}
+            />
+            <Route
+              path="/university"
+              element={<University isAuth={isAuth} setIsAuth={setIsAuth} />}
             />
             <Route
               path="/cocktails"

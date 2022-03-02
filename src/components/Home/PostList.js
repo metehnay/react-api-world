@@ -3,8 +3,11 @@ import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import { MainContext, useContext } from "../Context";
 import clock from "./clock.svg";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 const PostList = ({ post, addFavorite, removeFavourites, isAuth }) => {
   const { linkin, title, imageURL, photoURL, name, id, ms, onoff } = post;
+  const MySwal = withReactContent(Swal);
 
   const [hover, setHover] = useState(false);
 
@@ -12,6 +15,30 @@ const PostList = ({ post, addFavorite, removeFavourites, isAuth }) => {
   const log = useNavigate();
   const loginNav = () => {
     log("/login");
+  };
+
+  const downAlert = () => {
+    MySwal.fire({
+      title: "Sorry This API Currently Down",
+      icon: "warning",
+      text: `You can check back it later.`,
+      showCancelButton: false,
+      confirmButtonText: "OK",
+      customClass: {
+        confirmButton: "btn btn-primary m-2 p-2",
+        cancelButton: "btn btn-success m-2 p-2",
+      },
+      showClass: {
+        backdrop: "swal2-noanimation", // disable backdrop animation
+        popup: "", // disable popup animation
+        icon: "", // disable icon animation
+      },
+      hideClass: {
+        backdrop: "swal2-noanimation", // disable backdrop animation
+        popup: "", // disable popup animation
+        icon: "", // disable icon animation
+      },
+    });
   };
   return (
     <>
@@ -24,18 +51,37 @@ const PostList = ({ post, addFavorite, removeFavourites, isAuth }) => {
           <div className="postimage">
             <div className="del"></div>
             <div className={onoff ? "images disable" : "images"}>
-              <a href={linkin}>
-                <p className="ss">
-                  {title}{" "}
-                  {onoff ? (
-                    <i className="status1"></i>
-                  ) : (
-                    <i className="status"></i>
-                  )}
-                </p>
+              {onoff ? (
+                <>
+                  <div className="point" onClick={downAlert}>
+                    <p className="ss">
+                      {title}{" "}
+                      {onoff ? (
+                        <i className="status1"></i>
+                      ) : (
+                        <i className="status"></i>
+                      )}
+                    </p>
 
-                <img src={imageURL} id="img-photo" />
-              </a>
+                    <img src={imageURL} id="img-photo" />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <a href={linkin}>
+                    <p className="ss">
+                      {title}{" "}
+                      {onoff ? (
+                        <i className="status1"></i>
+                      ) : (
+                        <i className="status"></i>
+                      )}
+                    </p>
+
+                    <img src={imageURL} id="img-photo" />
+                  </a>
+                </>
+              )}
               <div className="uploader">
                 <img
                   src={

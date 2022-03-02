@@ -39,6 +39,9 @@
   background-color: #479fd7;
 }
 
+.point {
+  cursor: pointer;
+}
 #ado a {
   color: #fff;
 }

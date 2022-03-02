@@ -50,11 +50,22 @@ export const Group3 = ({}) => {
           <Wqeqw />
           <Image1
             src={
-              "https://firebasestorage.googleapis.com/v0/b/rendition-prod.appspot.com/o/11efbbac-c109-4e4a-8189-8435611c517e.svg?alt=media&token=407c4208-cca4-4d0b-a4ef-348022f651f4"
+              "https://firebasestorage.googleapis.com/v0/b/rendition-prod.appspot.com/o/aa8e786d-2d2a-4f52-8ba3-cc7c5df6aad3.svg?alt=media&token=8e44585a-db82-4caa-89e9-0cb2d3618366"
             }
           />
           <Text2>
             <Link to="/googlebooks">Google Books</Link>
+          </Text2>
+        </Element1>
+        <Element1>
+          <Wqeqw />
+          <Image1
+            src={
+              "https://firebasestorage.googleapis.com/v0/b/rendition-prod.appspot.com/o/11efbbac-c109-4e4a-8189-8435611c517e.svg?alt=media&token=407c4208-cca4-4d0b-a4ef-348022f651f4"
+            }
+          />
+          <Text2>
+            <Link to="/university">University</Link>
           </Text2>
         </Element1>
       </Q>
