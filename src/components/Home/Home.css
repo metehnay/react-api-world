@@ -17,7 +17,7 @@
 .bordered {
   background: rgb(55, 63, 104);
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;

@@ -27,6 +27,7 @@ import ImgFlip from "./components/ListAPI/ImgFlip/ImgFlip";
 import Football from "./components/ListAPI/Football/Football";
 import Crypto from "./components/ListAPI/Crypto/Crypto";
 import MakeUp from "./components/ListAPI/MakeUp/MakeUp";
+import MobileNavigation from "./components/MobileNavigation";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -130,6 +131,8 @@ function App() {
       <MainContext.Provider value={data}>
         <ToastContainer />
         <Router>
+          <MobileNavigation isAuth={isAuth} setIsAuth={setIsAuth} />
+
           <Routes>
             <Route
               exact

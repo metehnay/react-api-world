@@ -93,9 +93,13 @@
   filter: blur(3.5px);
 }
 
+.group a {
+  color: #000;
+}
+
 #lock {
   position: absolute;
-  bottom: 6rem;
+  bottom: 4rem;
   filter: blur(1px);
 
   opacity: 0.9;

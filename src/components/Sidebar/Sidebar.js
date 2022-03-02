@@ -11,6 +11,7 @@ import ChuckNorris from "../ListAPI/ChuckNorris/ChuckNorris";
 import { Group3 } from "./Group3";
 import { Accordion } from "react-bootstrap";
 import AccordionMessage from "./AccordionMessage";
+import logo from "../../logo.png";
 
 const Sidebar = ({ isAuth, setIsAuth }) => {
   const currentUser = useAuth();

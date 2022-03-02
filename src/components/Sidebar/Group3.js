@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import "./Sidebar.css";
 export const Group3 = ({}) => {
   return (
-    <GroupRoot>
+    <GroupRoot className="group">
       <Q>
         <Element1>
           <Tage
@@ -15,7 +17,9 @@ export const Group3 = ({}) => {
               "https://firebasestorage.googleapis.com/v0/b/rendition-prod.appspot.com/o/aa8e786d-2d2a-4f52-8ba3-cc7c5df6aad3.svg?alt=media&token=8e44585a-db82-4caa-89e9-0cb2d3618366"
             }
           />
-          <Text1>Crypto API</Text1>
+          <Text1>
+            <Link to="/cocktails">Cocktails</Link>
+          </Text1>
         </Element1>
 
         <Element1>
@@ -25,7 +29,9 @@ export const Group3 = ({}) => {
               "https://firebasestorage.googleapis.com/v0/b/rendition-prod.appspot.com/o/11efbbac-c109-4e4a-8189-8435611c517e.svg?alt=media&token=407c4208-cca4-4d0b-a4ef-348022f651f4"
             }
           />
-          <Text2>Binance API</Text2>
+          <Text2>
+            <Link to="/crypto">Binance</Link>
+          </Text2>
         </Element1>
 
         <Element1>
@@ -35,7 +41,10 @@ export const Group3 = ({}) => {
               "https://firebasestorage.googleapis.com/v0/b/rendition-prod.appspot.com/o/11efbbac-c109-4e4a-8189-8435611c517e.svg?alt=media&token=407c4208-cca4-4d0b-a4ef-348022f651f4"
             }
           />
-          <Text2>Binance API</Text2>
+          <Text2>
+            {" "}
+            <Link to="/makeup">Makeup</Link>
+          </Text2>
         </Element1>
         <Element1>
           <Wqeqw />
@@ -44,7 +53,9 @@ export const Group3 = ({}) => {
               "https://firebasestorage.googleapis.com/v0/b/rendition-prod.appspot.com/o/11efbbac-c109-4e4a-8189-8435611c517e.svg?alt=media&token=407c4208-cca4-4d0b-a4ef-348022f651f4"
             }
           />
-          <Text2>Binance API</Text2>
+          <Text2>
+            <Link to="/googlebooks">Google Books</Link>
+          </Text2>
         </Element1>
       </Q>
       <Asa

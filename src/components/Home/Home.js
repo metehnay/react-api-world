@@ -27,12 +27,17 @@ const Home = ({ isAuth, setIsAuth }) => {
         <Sidebar isAuth={isAuth} setIsAuth={setIsAuth} />
         <div className="centered">
           <div className="bordered">
-            <input
-              type="text"
-              placeholder="Search API..."
-              className="px-3 py-2"
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
+            {" "}
+            <div class="form-outline">
+              <input
+                id="search-focus"
+                type="search"
+                placeholder="Search API..."
+                id="form1"
+                onChange={(e) => setSearchTerm(e.target.value)}
+                class="form-control"
+              />
+            </div>
             <button id="ado">
               <Link to="/createpost">+ Add API</Link>
             </button>
