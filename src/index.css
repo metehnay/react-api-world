@@ -37,14 +37,24 @@ code {
     flex-wrap: wrap !important;
   }
 
+  .bordered {
+    border-radius: 0px !important;
+    padding: 0px !important;
+    background-color: #6ab1df !important;
+  }
+
   .images {
     width: 100% !important;
+  }
+
+  .mobile-logo {
+    margin: auto;
   }
 
   #img-photo {
     width: 100% !important;
     height: 100% !important;
-    max-height: 22 0px !important;
+    max-height: 220px !important;
   }
 }
 

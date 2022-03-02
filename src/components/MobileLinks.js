@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import MobileNavigation from "./MobileNavigation";
-
 import { Link } from "react-router-dom";
 const MobileLinks = ({ isMobile, closeItem, isAuth, setIsAuth }) => {
   const animateForm = { opacity: 0, y: -40 };

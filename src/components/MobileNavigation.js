@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { MdOutlineClose } from "react-icons/md";
 import MobileLinks from "./MobileLinks";
+import mobile from "./mobile-logo.png";
 
 const MobileNavigation = ({ isAuth, setIsAuth }) => {
   const [open, setOpen] = useState(false);
@@ -28,6 +29,8 @@ const MobileNavigation = ({ isAuth, setIsAuth }) => {
   return (
     <nav className="mobile-navigation">
       <div className="burgers"> {open ? closeIcon : burgerIcon} </div>
+      <img src={mobile} className="mobile-logo" />
+
       {open && (
         <>
           <MobileLinks
