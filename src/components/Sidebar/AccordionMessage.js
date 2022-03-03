@@ -9,8 +9,8 @@ const AccordionMessage = () => {
           <Accordion.Header>What is Premium API?</Accordion.Header>
           <Accordion.Body>
             Premium API's are free just like regular API's but they're more than
-            just fetching a random photo. You can actually build serious
-            projects with it.{" "}
+            just fetching a random photo. You can build serious projects with
+            it.
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

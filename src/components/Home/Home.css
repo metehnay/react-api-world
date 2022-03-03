@@ -59,6 +59,11 @@
   height: 150px;
 }
 
+.post {
+  width: 300px;
+  height: 320px;
+}
+
 .images {
   padding: 10px;
   transition: transform 0.7s ease-in-out;
